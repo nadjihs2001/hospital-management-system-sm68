@@ -188,7 +188,7 @@
                                 <span
                                     class="badge badge-pill badge-warning mr-auto my-auto float-left">Mark All Read</span>
                             </div>
-                            <p data-count="{{App\Models\Notification::CountNotification(auth()->user()->id)->count()}}" class="dropdown-title-text subtext mb-0 text-white op-6 pb-0 tx-12 notif-count">{{App\Models\Notification::CountNotification(auth()->user()->id)->count()}}</p>
+                          <!-- <p data-count="{{App\Models\Notification::CountNotification(auth()->user()->id)->count()}}" class="dropdown-title-text subtext mb-0 text-white op-6 pb-0 tx-12 notif-count">{{App\Models\Notification::CountNotification(auth()->user()->id)->count()}}</p>-->
                         </div>
                         <div class="main-notification-list Notification-scroll">
 
