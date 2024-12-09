@@ -29,12 +29,12 @@
                            aria-expanded="false">
                             @if (App::getLocale() == 'ar')
                                 <span class="avatar country-Flag mr-0 align-self-center bg-transparent"><img
-                                        src="{{URL::asset('Dashboard/img/flags/egypt_flag.jpg')}}" alt="img"></span>
+                                        src="{{URL::asset('Dashboard/img/flags/DZ-flag.jpg')}}" alt="img"></span>
                                 <strong
                                     class="mr-2 ml-2 my-auto">{{ LaravelLocalization::getCurrentLocaleName() }}</strong>
                             @else
                                 <span class="avatar country-Flag mr-0 align-self-center bg-transparent"><img
-                                        src="{{URL::asset('Dashboard/img/flags/us_flag.jpg')}}" alt="img"></span>
+                                        src="{{URL::asset('Dashboard/img/flags/french_flag.jpg')}}" alt="img"></span>
                                 <strong
                                     class="mr-2 ml-2 my-auto">{{ LaravelLocalization::getCurrentLocaleName() }}</strong>
                             @endif
@@ -46,9 +46,9 @@
                                 <a class="dropdown-item" rel="alternate" hreflang="{{ $localeCode }}"
                                    href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
                                     @if($properties['native'] == "English")
-                                        <i class="flag-icon flag-icon-us"></i>
+                                        <i class="flag-icon flag-icon-fr"></i>
                                     @elseif($properties['native'] == "العربية")
-                                        <i class="flag-icon flag-icon-eg"></i>
+                                        <i class="flag-icon flag-icon-dz"></i>
                                     @endif
                                     {{ $properties['native'] }}
                                 </a>

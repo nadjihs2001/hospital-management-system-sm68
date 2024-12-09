@@ -13,8 +13,8 @@ use App\Http\Controllers\Dashboard\RayEmployeeController;
 use App\Http\Controllers\Dashboard\ReceiptAccountController;
 use App\Http\Controllers\Dashboard\SectionController;
 use App\Http\Controllers\Dashboard\SingleServiceController;
-use Illuminate\Support\Facades\Route;
-
+use Illuminate\Support\Facades\Route; 
+use \Mcamara\LaravelLocalization\ 
 /*
 |--------------------------------------------------------------------------
 | Backend Routes
