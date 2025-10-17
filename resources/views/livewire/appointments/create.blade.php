@@ -29,7 +29,7 @@
 
             <div class="col-lg-6 col-md-6 col-sm-12 form-group">
                 <label for="exampleFormControlSelect1">القسم</label>
-                <select class="form-select" name="section" wire:model="section" id="exampleFormControlSelect1">
+                <select class="form-select" name="polyclinic" wire:model="polyclinic" id="exampleFormControlSelect1">
                     <option>-- اختار من القائمة --</option>
                     @foreach($sections as $section)
                         <option value="{{$section->id}}">{{$section->name}}</option>

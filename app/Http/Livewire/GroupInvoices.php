@@ -23,7 +23,7 @@ class GroupInvoices extends Component
     public $Group_id;
     public $catchError;
     public $price = 0;
-    public $patient_id,$doctor_id,$section_id,$type;
+    public $patient_id,$doctor_id,$polyclinic_id,$type;
     public $discount_value = 0;
     public $tax_rate = 0;
 
@@ -47,10 +47,10 @@ class GroupInvoices extends Component
     }
 
 
-    public function get_section()
+    public function get_polyclinic()
     {
-        $doctor_id = Doctor::with('section')->where('id', $this->doctor_id)->first();
-        $this->section_id = $doctor_id->section->name;
+        $doctor_id = Doctor::with('polyclinic')->where('id', $this->doctor_id)->first();
+        $this->polyclinic_id = $doctor_id->section->name;
     }
 
     public function get_price()
@@ -76,7 +76,7 @@ class GroupInvoices extends Component
                     $group_invoices->invoice_date = date('Y-m-d');
                     $group_invoices->patient_id = $this->patient_id;
                     $group_invoices->doctor_id = $this->doctor_id;
-                    $group_invoices->section_id = DB::table('section_translations')->where('name', $this->section_id)->first()->section_id;
+                    $group_invoices->polyclinic_id = DB::table('polyclinic_translations')->where('name', $this->polyclinic_id)->first()->polyclinic_id;
                     $group_invoices->Group_id = $this->Group_id;
                     $group_invoices->price = $this->price;
                     $group_invoices->discount_value = $this->discount_value;
@@ -107,7 +107,7 @@ class GroupInvoices extends Component
                     $group_invoices->invoice_date = date('Y-m-d');
                     $group_invoices->patient_id = $this->patient_id;
                     $group_invoices->doctor_id = $this->doctor_id;
-                    $group_invoices->section_id = DB::table('section_translations')->where('name', $this->section_id)->first()->section_id;
+                    $group_invoices->polyclinic_id = DB::table('polyclinic_translations')->where('name', $this->polyclinic_id)->first()->polyclinic_id;
                     $group_invoices->Group_id = $this->Group_id;
                     $group_invoices->price = $this->price;
                     $group_invoices->discount_value = $this->discount_value;
@@ -154,7 +154,7 @@ class GroupInvoices extends Component
                     $group_invoices->invoice_date = date('Y-m-d');
                     $group_invoices->patient_id = $this->patient_id;
                     $group_invoices->doctor_id = $this->doctor_id;
-                    $group_invoices->section_id = DB::table('section_translations')->where('name', $this->section_id)->first()->section_id;
+                    $group_invoices->polyclinic_id = DB::table('polyclinic_translations')->where('name', $this->polyclinic_id)->first()->polyclinic_id;
                     $group_invoices->Group_id = $this->Group_id;
                     $group_invoices->price = $this->price;
                     $group_invoices->discount_value = $this->discount_value;
@@ -188,7 +188,7 @@ class GroupInvoices extends Component
                     $group_invoices->invoice_date = date('Y-m-d');
                     $group_invoices->patient_id = $this->patient_id;
                     $group_invoices->doctor_id = $this->doctor_id;
-                    $group_invoices->section_id = DB::table('section_translations')->where('name', $this->section_id)->first()->section_id;
+                    $group_invoices->polyclinic_id = DB::table('polyclinic_translations')->where('name', $this->polyclinic_id)->first()->polyclinic_id;
                     $group_invoices->Group_id = $this->Group_id;
                     $group_invoices->price = $this->price;
                     $group_invoices->discount_value = $this->discount_value;
@@ -229,7 +229,7 @@ class GroupInvoices extends Component
         $this->group_invoice_id = $group_invoices->id;
         $this->patient_id = $group_invoices->patient_id;
         $this->doctor_id = $group_invoices->doctor_id;
-        $this->section_id = DB::table('section_translations')->where('id', $group_invoices->section_id)->first()->name;
+        $this->polyclinic_id = DB::table('polyclinic_translations')->where('id', $group_invoices->polyclinic_id)->first()->name;
         $this->Group_id = $group_invoices->Group_id;
         $this->price = $group_invoices->price;
         $this->discount_value = $group_invoices->discount_value;
@@ -254,7 +254,7 @@ class GroupInvoices extends Component
         return Redirect::route('group_Print_single_invoices',[
             'invoice_date' => $single_invoice->invoice_date,
             'doctor_id' => $single_invoice->Doctor->name,
-            'section_id' => $single_invoice->Section->name,
+            'polyclinic_id' => $single_invoice->Section->name,
             'Group_id' => $single_invoice->Group->name,
             'type' => $single_invoice->type,
             'price' => $single_invoice->price,

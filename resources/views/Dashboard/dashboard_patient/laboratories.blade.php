@@ -63,7 +63,7 @@
                         </div>
                         <!--/div-->
 
-                    @include('Dashboard.Sections.add')
+                    @include('Dashboard.Polyclinics.add')
                     <!-- /row -->
 
 				</div>

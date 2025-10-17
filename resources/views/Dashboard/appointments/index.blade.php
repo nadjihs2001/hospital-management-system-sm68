@@ -48,7 +48,7 @@
                                     <td>{{$loop->iteration}}</td>
                                     <td>{{$appointment->name}}</a></td>
                                     <td>{{$appointment->email}}</td>
-                                    <td>{{$appointment->section->name}}</td>
+                                    <td>{{$appointment->polyclinic->name}}</td>
                                     <td>{{$appointment->doctor->name}}</td>
                                     <td>{{$appointment->phone}}</td>
                                     <td>{{$appointment->notes}}</td>

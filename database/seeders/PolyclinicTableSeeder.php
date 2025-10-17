@@ -2,10 +2,10 @@
 
 namespace Database\Seeders;
 
-use App\Models\Section;
+use App\Models\Polyclinic;
 use Illuminate\Database\Seeder;
 
-class SectionTableSeeder extends Seeder
+class PolyclinicTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,6 +14,6 @@ class SectionTableSeeder extends Seeder
      */
     public function run()
     {
-        \App\Models\Section::factory()->count(6)->create();
+        \App\Models\Polyclinic::factory()->count(6)->create();
     }
 }

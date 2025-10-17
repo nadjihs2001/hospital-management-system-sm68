@@ -29,7 +29,7 @@ class StoreDoctorsRequest extends FormRequest
             "phone" => 'required|numeric|unique:doctors,phone,' . $this->id,
             "name" => 'required|regex:/^[A-Za-z0-9-أ-ي-pL\s\-]+$/u',
             "appointments" => 'required',
-            "section_id" => 'required',
+            "polyclinic_id" => 'required',
         ];
     }
 
@@ -45,7 +45,7 @@ class StoreDoctorsRequest extends FormRequest
             'phone.unique' => trans('validation.unique'),
             'name.required' => trans('validation.required'),
             'name.regex' => trans('validation.regex'),
-            'section_id.required' => trans('validation.required'),
+            'polyclinic_id.required' => trans('validation.required'),
         ];
     }
 

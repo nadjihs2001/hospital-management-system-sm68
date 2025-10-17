@@ -2,10 +2,10 @@
 
 return [
 
-   'add_sections'=>'Add Sections',
-   'name_sections'=>'Name Sections',
-    'edit_sections'=>'Edit Sections',
-    'delete_sections'=>'Delete Sections',
+   'add_polyclinics'=>'Add Polyclinics',
+   'name_polyclinics'=>'Name Polyclinics',
+    'edit_polyclinics'=>'Edit Polyclinics',
+    'delete_polyclinics'=>'Delete Polyclinics',
    'created_at'=>'Created_at',
    'Processes'=>'Processes',
    'submit'=>'Submit',

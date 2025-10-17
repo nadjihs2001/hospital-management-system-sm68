@@ -1,25 +1,25 @@
 @extends('Dashboard.layouts.master')
-@section('css')
+@polyclinic('css')
 
 
-@endsection
+@endpolyclinic
 
-@section('title')
-    {{$section->name}} / {{trans('sections_trans.section_doctors')}}
+@polyclinic('title')
+    {{$polyclinic->name}} / {{trans('polyclinics_trans.polyclinic_doctors')}}
 @stop
 
-@section('page-header')
+@polyclinic('page-header')
     <!-- breadcrumb -->
     <div class="breadcrumb-header justify-content-between">
         <div class="my-auto">
             <div class="d-flex">
-                <h4 class="content-title mb-0 my-auto">{{$section->name}}</h4><span class="text-muted mt-1 tx-13 mr-2 mb-0">/ {{trans('sections_trans.section_doctors')}}</span>
+                <h4 class="content-title mb-0 my-auto">{{$polyclinic->name}}</h4><span class="text-muted mt-1 tx-13 mr-2 mb-0">/ {{trans('polyclinics_trans.polyclinic_doctors')}}</span>
             </div>
         </div>
     </div>
     <!-- breadcrumb -->
-@endsection
-@section('content')
+@endpolyclinic
+@polyclinic('content')
     <!-- row opened -->
     <div class="row row-sm">
         <!--div-->
@@ -33,7 +33,7 @@
                                 <th>#</th>
                                 <th>{{trans('doctors.name')}}</th>
                                 <th>{{trans('doctors.email')}}</th>
-                                <th>{{trans('doctors.section')}}</th>
+                                <th>{{trans('doctors.polyclinic')}}</th>
                                 <th>{{trans('doctors.phone')}}</th>
                                 <th>{{trans('doctors.appointments')}}</th>
                                 <th>{{trans('doctors.Status')}}</th>
@@ -46,7 +46,7 @@
                                 <th scope="row">{{ $loop->iteration }}</th>
                                 <td>{{$doctor->name}}</td>
                                 <td>{{ $doctor->email }}</td>
-                                <td>{{ $doctor->section->name}}</td>
+                                <td>{{ $doctor->polyclinic->name}}</td>
                                 <td>{{ $doctor->phone}}</td>
                                 <td>
                                     @foreach($doctor->doctorappointments as $appointment)
@@ -90,6 +90,6 @@
     <!-- Container closed -->
     </div>
     <!-- main-content closed -->
-@endsection
-@section('js')
-@endsection
+@endpolyclinic
+@polyclinic('js')
+@endpolyclinic

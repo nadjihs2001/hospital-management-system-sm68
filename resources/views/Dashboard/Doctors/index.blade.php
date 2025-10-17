@@ -72,7 +72,7 @@
                                         @endif
                                     </td>
                                     <td>{{ $doctor->email }}</td>
-                                    <td>{{ $doctor->section->name}}</td>
+                                    <td>{{ $doctor->polyclinic->name}}</td>
                                     <td>{{ $doctor->phone}}</td>
                                     <td>
                                         @foreach($doctor->doctorappointments as $appointment)

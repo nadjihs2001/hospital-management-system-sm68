@@ -18,7 +18,7 @@ class CreateSingleInvoicesTable extends Migration
             $table->date('invoice_date');
             $table->foreignId('patient_id')->references('id')->on('patients')->onDelete('cascade');
             $table->foreignId('doctor_id')->references('id')->on('doctors')->onDelete('cascade');
-            $table->foreignId('section_id')->references('id')->on('sections')->onDelete('cascade');
+            $table->foreignId('polyclinic_id')->references('id')->on('polyclinics')->onDelete('cascade');
             $table->foreignId('Service_id')->references('id')->on('Services')->onDelete('cascade');
             $table->double('price', 8, 2)->default(0);
             $table->double('discount_value', 8, 2)->default(0);

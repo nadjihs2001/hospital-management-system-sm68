@@ -91,10 +91,10 @@
                                 </div>
 
                                 <div class="col-md-11 mg-t-5 mg-md-t-0">
-                                    <select name="section_id" class="form-control SlectBox">
+                                    <select name="polyclinic_id" class="form-control SlectBox">
                                         <option value="" selected disabled>------</option>
-                                        @foreach($sections as $section)
-                                            <option value="{{$section->id}}">{{$section->name}}</option>
+                                        @foreach($polyclinics as $polyclinic)
+                                            <option value="{{$polyclinic->id}}">{{$polyclinic->name}}</option>
                                         @endforeach
                                     </select>
                                 </div>

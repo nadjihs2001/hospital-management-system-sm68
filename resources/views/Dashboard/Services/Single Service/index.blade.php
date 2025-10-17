@@ -42,8 +42,8 @@
                                 <th> {{trans('Services.price')}}</th>
                                 <th> {{trans('doctors.Status')}}</th>
                                 <th> {{trans('Services.description')}}</th>
-                                <th>{{trans('sections_trans.created_at')}}</th>
-                                <th>{{trans('sections_trans.Processes')}}</th>
+                                <th>{{trans('polyclinics_trans.created_at')}}</th>
+                                <th>{{trans('polyclinics_trans.Processes')}}</th>
                             </tr>
                             </thead>
                             <tbody>

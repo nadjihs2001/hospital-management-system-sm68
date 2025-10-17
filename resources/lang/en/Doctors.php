@@ -21,7 +21,7 @@ return array (
   'password' => 'password',
   'phone' => 'phone',
   'price' => 'price',
-  'section' => 'Section',
+  'polyclinic' => 'Section',
   'submit' => 'submit',
   'update_password' => 'Update Password',
 );

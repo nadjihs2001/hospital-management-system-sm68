@@ -7,7 +7,7 @@ use Astrotomic\Translatable\Contracts\Translatable as TranslatableContract;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Section extends Model
+class Polyclinic extends Model
 {
     use Translatable; // 2. To add translation methods
     protected $fillable =['name','description'];

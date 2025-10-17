@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSectionTranslationsTable extends Migration
+class CreatePolyclinicTranslationsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,13 @@ class CreateSectionTranslationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('section_translations', function (Blueprint $table) {
+        Schema::create('polyclinic_translations', function (Blueprint $table) {
             $table->id();
             $table->string('locale')->index();
             $table->longText('description');
             // Foreign key to the main model
-            $table->unique(['section_id', 'locale']);
-            $table->foreignId('section_id')->references('id')->on('sections')->onDelete('cascade');
+            $table->unique(['polyclinic_id', 'locale']);
+            $table->foreignId('polyclinic_id')->references('id')->on('polyclinics')->onDelete('cascade');
 
             // fields you want to translate
             $table->string('name');
@@ -34,6 +34,6 @@ class CreateSectionTranslationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('section_translations');
+        Schema::dropIfExists('polyclinic_translations');
     }
 }

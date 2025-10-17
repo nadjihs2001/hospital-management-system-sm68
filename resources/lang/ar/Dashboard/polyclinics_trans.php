@@ -2,10 +2,10 @@
 
 return [
 
-   'add_sections'=>'اضافة قسم',
-   'name_sections'=>'اسم القسم',
-    'edit_sections'=>'تعديل قسم',
-    'delete_sections'=>'حذف قسم',
+   'add_polyclinics'=>'اضافة قسم',
+   'name_polyclinics'=>'اسم القسم',
+    'edit_polyclinics'=>'تعديل قسم',
+    'delete_polyclinics'=>'حذف قسم',
    'created_at'=>'تاريخ الاضافة',
    'Processes'=>'العمليات',
    'submit'=>'تاكيد',
