@@ -14,14 +14,13 @@
                             <!-- Content Column -->
                             <div class="content-column col-lg-6 col-md-12 col-sm-12">
                                 <div class="inner-column">
-                                    <h2>شريكك الصحي الأكثر ثقة مدى الحياة</h2>
+                                    <h2>{{ trans('website.hero_title') }}</h2>
                                     <div class="text">
-                                        نحن نقدم استشارات مجانية وأفضل إدارة مشروع لك
-                                        الأفكار ، 100٪ التسليم مضمون
+                                        {{ trans('website.hero_subtitle') }}
                                     </div>
                                     <div class="btn-box">
-                                        <a href="contact.html" class="theme-btn appointment-btn"><span class="txt">المواعيد</span></a>
-                                        <a href="services.html" class="theme-btn services-btn">الخدمات</a>
+                                        <a href="contact.html" class="theme-btn appointment-btn"><span class="txt">{{ trans('website.appointments') }}</span></a>
+                                        <a href="services.html" class="theme-btn services-btn">{{ trans('website.services') }}</a>
                                     </div>
                                 </div>
                             </div>
@@ -48,13 +47,12 @@
                             <!-- Content Column -->
                             <div class="content-column col-lg-6 col-md-12 col-sm-12">
                                 <div class="inner-column">
-                                    <h2>Your Most Trusted Health Partner For Life.</h2>
-                                    <div class="text">We offer free consulting and the best project management for your
-                                        ideas, 100% delivery guaranteed.
+                                    <h2>{{ trans('website.hero_title') }}</h2>
+                                    <div class="text">{{ trans('website.hero_subtitle') }}
                                     </div>
                                     <div class="btn-box">
-                                        <a href="contact.html" class="theme-btn appointment-btn"><span class="txt">Appointment</span></a>
-                                        <a href="services.html" class="theme-btn services-btn">Services</a>
+                                        <a href="contact.html" class="theme-btn appointment-btn"><span class="txt">{{ trans('website.appointment') }}</span></a>
+                                        <a href="services.html" class="theme-btn services-btn">{{ trans('website.services') }}</a>
                                     </div>
                                 </div>
                             </div>
@@ -127,12 +125,12 @@
                             <div class="border-line"></div>
                             <!-- Sec Title -->
                             <div class="sec-title">
-                                <h2>من نحن <br> الريادة في الصحة</h2>
+                                <h2>{{ trans('website.about_title') }} <br> {{ trans('website.about_subtitle') }}</h2>
                                 <div class="separator"></div>
                             </div>
-                            <div class="text">أين أنت في قلب مهمتنا. نأمل أن تعتبرنا منزلك الطبي - المكان الذي تشعر فيه بالأمان والراحة والرعاية. كمجموعة طبية متعددة التخصصات
+                            <div class="text">{{ trans('website.about_description') }}
                             </div>
-                            <a href="about.html" class="theme-btn btn-style-one"><span class="txt">المزيد عنا</span></a>
+                            <a href="about.html" class="theme-btn btn-style-one"><span class="txt">{{ trans('website.more_about_us') }}</span></a>
                         </div>
                     </div>
 
@@ -162,9 +160,9 @@
                     <div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
                         <div class="upper-box">
                             <div class="icon flaticon-doctor-stethoscope"></div>
-                            <h3><a href="#">العلاج الطبي</a></h3>
+                            <h3><a href="#">{{ trans('website.medical_treatment') }}</a></h3>
                         </div>
-                        <div class="text">سواء أكنت تتخذ خطواتك الأولى ، أو مجرد إيجاد خطوتك</div>
+                        <div class="text">{{ trans('website.feature_description') }}</div>
                     </div>
                 </div>
 
@@ -173,9 +171,9 @@
                     <div class="inner-box wow fadeInLeft" data-wow-delay="250ms" data-wow-duration="1500ms">
                         <div class="upper-box">
                             <div class="icon flaticon-ambulance-side-view"></div>
-                            <h3><a href="#">مساعدة الطوارئ</a></h3>
+                            <h3><a href="#">{{ trans('website.emergency_help') }}</a></h3>
                         </div>
-                        <div class="text">سواء أكنت تتخذ خطواتك الأولى ، أو مجرد إيجاد خطوتك</div>
+                        <div class="text">{{ trans('website.feature_description') }}</div>
                     </div>
                 </div>
 
@@ -184,9 +182,9 @@
                     <div class="inner-box wow fadeInLeft" data-wow-delay="500ms" data-wow-duration="1500ms">
                         <div class="upper-box">
                             <div class="icon fas fa-user-md"></div>
-                            <h3><a href="#">أطباء مؤهلين</a></h3>
+                            <h3><a href="#">{{ trans('website.qualified_doctors') }}</a></h3>
                         </div>
-                        <div class="text">سواء أكنت تتخذ خطواتك الأولى ، أو مجرد إيجاد خطوتك</div>
+                        <div class="text">{{ trans('website.feature_description') }}</div>
                     </div>
                 </div>
 
@@ -195,9 +193,9 @@
                     <div class="inner-box wow fadeInLeft" data-wow-delay="750ms" data-wow-duration="1500ms">
                         <div class="upper-box">
                             <div class="icon fas fa-briefcase-medical"></div>
-                            <h3><a href="#">محترفين طبيا</a></h3>
+                            <h3><a href="#">{{ trans('website.medical_professionals') }}</a></h3>
                         </div>
-                        <div class="text">سواء أكنت تتخذ خطواتك الأولى ، أو مجرد إيجاد خطوتك</div>
+                        <div class="text">{{ trans('website.feature_description') }}</div>
                     </div>
                 </div>
 
@@ -217,16 +215,16 @@
                     <div class="col-lg-4 col-md-12 col-sm-12">
                         <!-- Sec Title -->
                         <div class="sec-title light">
-                            <h2>الاقسام</h2>
+                            <h2>{{ trans('website.departments_title') }}</h2>
                             <div class="separator"></div>
                         </div>
                         <!--Tab Btns-->
                         <ul class="tab-btns tab-buttons clearfix">
-                            <li data-tab="#tab-urology" class="tab-btn active-btn">قسم المسالك البولية</li>
-                            <li data-tab="#tab-department" class="tab-btn">قسم المخ والأعصاب</li>
-                            <li data-tab="#tab-gastrology" class="tab-btn">قسم أمراض الجهاز الهضمي</li>
-                            <li data-tab="#tab-cardiology" class="tab-btn">قسم أمراض القلب</li>
-                            <li data-tab="#tab-eye" class="tab-btn">قسم العناية بالعيون</li>
+                            <li data-tab="#tab-urology" class="tab-btn active-btn">{{ trans('website.urology_department') }}</li>
+                            <li data-tab="#tab-department" class="tab-btn">{{ trans('website.neurology_department') }}</li>
+                            <li data-tab="#tab-gastrology" class="tab-btn">{{ trans('website.gastrology_department') }}</li>
+                            <li data-tab="#tab-cardiology" class="tab-btn">{{ trans('website.cardiology_department') }}</li>
+                            <li data-tab="#tab-eye" class="tab-btn">{{ trans('website.eye_care_department') }}</li>
                         </ul>
                     </div>
                     <!--Column-->
@@ -419,7 +417,7 @@
 
             <!-- Sec Title -->
             <div class="sec-title centered">
-                <h2>الأخصائيون الطبيون</h2>
+                <h2>{{ trans('website.medical_specialists') }}</h2>
                 <div class="separator"></div>
             </div>
 
@@ -529,7 +527,7 @@
             <div class="content">
                 <a href="https://www.youtube.com/watch?v=kxPCFljwJws" class="lightbox-image play-box"><span
                         class="flaticon-play-button"><i class="ripple"></i></span></a>
-                <div class="text">نحن نهتم بصحتك<h2>نحن نهتم بك</h2>
+                <div class="text">{{ trans('website.we_care_health') }}<h2>{{ trans('website.we_care_you') }}</h2>
                 </div>
             </div>
     </section>
@@ -555,7 +553,7 @@
                         <div class="inner-column">
                             <!-- Sec Title -->
                             <div class="sec-title">
-                                <h2>حجز موعد</h2>
+                                <h2>{{ trans('website.make_appointment') }}</h2>
                                 <div class="separator"></div>
                             </div>
 
@@ -577,7 +575,7 @@
         <div class="auto-container">
             <!-- Sec Title -->
             <div class="sec-title centered">
-                <h2>ماذا يقول المرضى</h2>
+                <h2>{{ trans('website.what_patients_say') }}</h2>
                 <div class="separator"></div>
             </div>
             <div class="testimonial-carousel owl-carousel owl-theme">
@@ -717,7 +715,7 @@
                                 <div class="count-outer count-box">
                                     <span class="count-text" data-speed="2500" data-stop="2350">0</span>
                                 </div>
-                                <h4 class="counter-title">مرضى راضون</h4>
+                                <h4 class="counter-title">{{ trans('website.satisfied_patients') }}</h4>
                             </div>
                         </div>
                     </div>
@@ -730,7 +728,7 @@
                                 <div class="count-outer count-box alternate">
                                     +<span class="count-text" data-speed="3000" data-stop="350">0</span>
                                 </div>
-                                <h4 class="counter-title">فريق الطبيب</h4>
+                                <h4 class="counter-title">{{ trans('website.doctor_team') }}</h4>
                             </div>
                         </div>
                     </div>
@@ -743,7 +741,7 @@
                                 <div class="count-outer count-box">
                                     <span class="count-text" data-speed="3000" data-stop="2150">0</span>
                                 </div>
-                                <h4 class="counter-title">مهمة النجاح</h4>
+                                <h4 class="counter-title">{{ trans('website.success_mission') }}</h4>
                             </div>
                         </div>
                     </div>
@@ -756,7 +754,7 @@
                                 <div class="count-outer count-box">
                                     +<span class="count-text" data-speed="2500" data-stop="225">0</span>
                                 </div>
-                                <h4 class="counter-title">جراحات ناجحة</h4>
+                                <h4 class="counter-title">{{ trans('website.successful_surgeries') }}</h4>
                             </div>
                         </div>
                     </div>
@@ -777,39 +775,35 @@
                     <!-- Doctor Block -->
                     <div class="doctor-block col-lg-4 col-md-6 col-sm-12">
                         <div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-                            <h3>ساعات العمل</h3>
+                            <h3>{{ trans('website.working_hours') }}</h3>
                             <ul class="doctor-time-list">
-                                <li>من الإثنين إلى الجمعة<span>8:00am–7:00pm</span></li>
-                                <li>السبت <span>9:00am–5:00pm</span></li>
-                                <li>الأحد<span>9:00am–3:00pm</span></li>
+                                <li>{{ trans('website.monday_to_friday') }}<span>8:00am–7:00pm</span></li>
+                                <li>{{ trans('website.saturday') }} <span>9:00am–5:00pm</span></li>
+                                <li>{{ trans('website.sunday') }}<span>9:00am–3:00pm</span></li>
                             </ul>
-                            <h4>حالات الطوارئ</h4>
-                            <div class="phone">اتصل بنا ! <strong>+898 68679 575 09</strong></div>
+                            <h4>{{ trans('website.emergencies') }}</h4>
+                            <div class="phone">{{ trans('website.call_us') }} <strong>+898 68679 575 09</strong></div>
                         </div>
                     </div>
 
                     <!-- Doctor Block -->
                     <div class="doctor-block col-lg-4 col-md-6 col-sm-12">
                         <div class="inner-box wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
-                            <h3>جدول الأطباء</h3>
+                            <h3>{{ trans('website.doctor_timetable') }}</h3>
                             <div class="text">
-                                ما يلي هو للإرشاد فقط لمساعدتك في التخطيط لموعدك
-                                طبيب أو ممرضة مفضلة. لا تضمن توافر الأطباء أو الممرضات
-                                قد يكون في بعض الأحيان يحضر إلى واجبات أخرى
+                                {{ trans('website.timetable_description') }}
                             </div>
-                            <a href="#" class="detail">تفاصيل اكثر</a>
+                            <a href="#" class="detail">{{ trans('website.more_details') }}</a>
                         </div>
                     </div>
 
                     <!-- Doctor Block -->
                     <div class="doctor-block col-lg-4 col-md-6 col-sm-12">
                         <div class="inner-box wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
-                            <h3>العناية الصحية الاولية</h3>
-                            <div class="text">عندما تعلم أنك تستخدم أفضل مواهبك من أجل شيء تحبه ، فأنت
-                                لا تستطيع ذلك. التواصل الفعال هو الأساس لبناء علامات تجارية صلبة مثل
-                                علاقة السفن بالبناء مع عملائنا
+                            <h3>{{ trans('website.primary_healthcare') }}</h3>
+                            <div class="text">{{ trans('website.healthcare_description') }}
                             </div>
-                            <a href="#" class="detail">اتصل الآن</a>
+                            <a href="#" class="detail">{{ trans('website.call_now') }}</a>
                         </div>
                     </div>
 
@@ -824,7 +818,7 @@
         <div class="auto-container">
             <!-- Sec Title -->
             <div class="sec-title centered">
-                <h2>آخر الأخبار والمقالات</h2>
+                <h2>{{ trans('website.latest_news_articles') }}</h2>
                 <div class="separator style-three"></div>
             </div>
             <div class="row clearfix">
@@ -846,15 +840,14 @@
                                 </ul>
                                 <ul class="post-meta">
                                     <li>21 يونيو 2018 الساعة 8:12 مساءً</li>
-                                    <li>Post بواسطة: Admin</li>
+                                    <li>{{ trans('website.posted_by') }}: {{ trans('website.admin') }}</li>
                                 </ul>
-                                <h3><a href="blog-detail.html">خدمات التشخيص لانتقاء نتائج فعالة بشكل صحيح</a></h3>
+                                <h3><a href="blog-detail.html">{{ trans('website.diagnostic_services') }}</a></h3>
                                 <div class="text">
-                                    هناك الكثير من النساء اللواتي يجهلن المخاطر العديدة
-                                    المرتبطة بصحتهم وتجاهل في النهاية
+                                    {{ trans('website.news_description') }}
                                 </div>
                                 <a href="blog-detail.html" class="theme-btn btn-style-five"><span
-                                        class="txt">اقرا المزيد</span></a>
+                                        class="txt">{{ trans('website.read_more') }}</span></a>
                             </div>
                         </div>
                     </div>

@@ -2,9 +2,10 @@
 
 return [
 
-     'Main'=>'Logiciel de Gestion d'Hopital',
-     'index'=>'Acueil',
-     'sections'=>'Sections',
+     'Main'=>'Logiciel de gestion hospitalière',
+     'index'=>'Accueil',
+     'polyclinics'=>'Polycliniques',
+     'view_all'=>'Voir tout',
 
 
 ];

@@ -49,8 +49,8 @@ class GroupInvoices extends Component
 
     public function get_section()
     {
-        $doctor_id = Doctor::with('section')->where('id', $this->doctor_id)->first();
-        $this->section_id = $doctor_id->section->name;
+        $doctor_id = Doctor::with('polyclinic')->where('id', $this->doctor_id)->first();
+        $this->section_id = $doctor_id->polyclinic->name;
     }
 
     public function get_price()

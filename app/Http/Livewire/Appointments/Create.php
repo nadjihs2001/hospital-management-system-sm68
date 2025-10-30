@@ -4,7 +4,7 @@ namespace App\Http\Livewire\Appointments;
 
 use App\Models\Appointment;
 use App\Models\Doctor;
-use App\Models\Section;
+use App\Models\Polyclinic;
 use Livewire\Component;
 
 class Create extends Component
@@ -21,7 +21,7 @@ class Create extends Component
 
     public function mount(){
 
-      $this->sections = Section::get();
+      $this->sections = Polyclinic::get();
       $this->doctors = collect();
 
     }
@@ -30,13 +30,13 @@ class Create extends Component
     {
         return view('livewire.appointments.create',
             [
-                'sections' => Section::get()
+                'sections' => Polyclinic::get()
             ]);
     }
 
     public function updatedSection($section_id){
 
-       $this->doctors = Doctor::where('section_id',$section_id)->get();
+       $this->doctors = Doctor::where('polyclinic_id',$section_id)->get();
     }
 
     public function store(){

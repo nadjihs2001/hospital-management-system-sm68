@@ -1,15 +1,15 @@
 <?php
 
 return array (
-  'Ambulance_calls' => 'Ambulance calls',
-  'Insurance' => 'Insurance',
-  'Main' => 'Hospital management software',
+  'Ambulance_calls' => 'Appels d\'ambulance',
+  'Insurance' => 'Assurances',
+  'Main' => 'Logiciel de gestion hospitalière',
   'Services' => 'Services',
-  'Single_service' => 'Single service',
+  'Single_service' => 'Service unique',
   'ambulance' => 'Ambulance',
-  'doctors' => 'Doctors',
-  'group_services' => 'Group Services',
-  'index' => 'Home',
-  'sections' => 'Sections',
-  'view_all' => 'view_all',
+  'doctors' => 'Médecins',
+  'group_services' => 'Groupe de services',
+  'index' => 'Accueil',
+  'polyclinics' => 'Polycliniques',
+  'view_all' => 'Voir tout',
 );

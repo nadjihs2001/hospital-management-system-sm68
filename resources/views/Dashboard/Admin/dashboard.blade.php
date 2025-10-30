@@ -10,16 +10,16 @@
 				<div class="breadcrumb-header justify-content-between">
 					<div class="left-content">
 						<div>
-						  <h2 class="main-content-title tx-24 mg-b-1 mg-b-lg-1">لوحة التحكم</h2>
+						  <h2 class="main-content-title tx-24 mg-b-1 mg-b-lg-1">{{ trans('dashboard.dashboard') }}</h2>
 						</div>
 					</div>
 					<div class="main-dashboard-header-right">
 						<div>
-							<label class="tx-13">عدد الخدمات المفردة</label>
+							<label class="tx-13">{{ trans('dashboard.single_services_count') }}</label>
 							<h5>{{\App\Models\Service::count()}}</h5>
 						</div>
 						<div>
-							<label class="tx-13">عدد الخدمات المجمعة</label>
+							<label class="tx-13">{{ trans('dashboard.group_services_count') }}</label>
 							<h5>{{\App\Models\Group::count()}}</h5>
 						</div>
 					</div>
@@ -33,7 +33,7 @@
 						<div class="card overflow-hidden sales-card bg-primary-gradient">
 							<div class="pl-3 pt-3 pr-3 pb-2 pt-0">
 								<div class="">
-									<h6 class="mb-3 tx-12 text-white">عدد الاطباء</h6>
+									<h6 class="mb-3 tx-12 text-white">{{ trans('dashboard.total_doctors') }}</h6>
 								</div>
 								<div class="pb-0 mt-0">
 									<div class="d-flex">
@@ -50,7 +50,7 @@
 						<div class="card overflow-hidden sales-card bg-danger-gradient">
 							<div class="pl-3 pt-3 pr-3 pb-2 pt-0">
 								<div class="">
-									<h6 class="mb-3 tx-12 text-white">عدد المرضي</h6>
+									<h6 class="mb-3 tx-12 text-white">{{ trans('dashboard.total_patients') }}</h6>
 								</div>
 								<div class="pb-0 mt-0">
 									<div class="d-flex">
@@ -67,12 +67,12 @@
 						<div class="card overflow-hidden sales-card bg-success-gradient">
 							<div class="pl-3 pt-3 pr-3 pb-2 pt-0">
 								<div class="">
-									<h6 class="mb-3 tx-12 text-white">عدد الاقسام</h6>
+									<h6 class="mb-3 tx-12 text-white">{{ trans('dashboard.total_polyclinics') }}</h6>
 								</div>
 								<div class="pb-0 mt-0">
 									<div class="d-flex">
 										<div class="">
-											<h4 class="tx-20 font-weight-bold mb-1 text-white">{{App\Models\Section::count()}}</h4>
+											<h4 class="tx-20 font-weight-bold mb-1 text-white">{{App\Models\Polyclinic::count()}}</h4>
 										</div>
 									</div>
 								</div>
@@ -89,24 +89,24 @@
 						<div class="card">
 							<div class="card-header bg-transparent pd-b-0 pd-t-20 bd-b-0">
 								<div class="d-flex justify-content-between">
-									<h4 class="card-title mb-0">Order status</h4>
+									<h4 class="card-title mb-0">{{ trans('dashboard.order_status') }}</h4>
 									<i class="mdi mdi-dots-horizontal text-gray"></i>
 								</div>
-								<p class="tx-12 text-muted mb-0">Order Status and Tracking. Track your order from ship date to arrival. To begin, enter your order number.</p>
+								<p class="tx-12 text-muted mb-0">{{ trans('dashboard.order_tracking') }}</p>
 							</div>
 							<div class="card-body">
 								<div class="total-revenue">
 									<div>
 									  <h4>120,750</h4>
-									  <label><span class="bg-primary"></span>success</label>
+									  <label><span class="bg-primary"></span>{{ trans('dashboard.success') }}</label>
 									</div>
 									<div>
 									  <h4>56,108</h4>
-									  <label><span class="bg-danger"></span>Pending</label>
+									  <label><span class="bg-danger"></span>{{ trans('dashboard.pending') }}</label>
 									</div>
 									<div>
 									  <h4>32,895</h4>
-									  <label><span class="bg-warning"></span>Failed</label>
+									  <label><span class="bg-warning"></span>{{ trans('dashboard.failed') }}</label>
 									</div>
 								  </div>
 								<div id="bar" class="sales-bar mt-4"></div>
@@ -115,8 +115,8 @@
 					</div>
 					<div class="col-lg-12 col-xl-5">
 						<div class="card card-dashboard-map-one">
-							<label class="main-content-label">Sales Revenue by Customers in USA</label>
-							<span class="d-block mg-b-20 text-muted tx-12">Sales Performance of all states in the United States</span>
+							<label class="main-content-label">{{ trans('dashboard.sales_revenue') }}</label>
+							<span class="d-block mg-b-20 text-muted tx-12">{{ trans('dashboard.sales_performance') }}</span>
 							<div class="">
 								<div class="vmap-wrapper ht-180" id="vmap2"></div>
 							</div>
@@ -130,8 +130,8 @@
 					<div class="col-xl-4 col-md-12 col-lg-12">
 						<div class="card">
 							<div class="card-header pb-1">
-								<h3 class="card-title mb-2">Recent Customers</h3>
-								<p class="tx-12 mb-0 text-muted">A customer is an individual or business that purchases the goods service has evolved to include real-time</p>
+								<h3 class="card-title mb-2">{{ trans('dashboard.recent_customers') }}</h3>
+								<p class="tx-12 mb-0 text-muted">{{ trans('dashboard.customer_description') }}</p>
 							</div>
 							<div class="card-body p-0 customers mt-1">
 								<div class="list-group list-lg-group list-group-flush">
@@ -142,7 +142,7 @@
 												<div class="d-flex align-items-center">
 													<div class="mt-0">
 														<h5 class="mb-1 tx-15">Samantha Melon</h5>
-														<p class="mb-0 tx-13 text-muted">User ID: #1234 <span class="text-success ml-2">Paid</span></p>
+														<p class="mb-0 tx-13 text-muted">{{ trans('dashboard.user_id') }}: #1234 <span class="text-success ml-2">{{ trans('dashboard.paid') }}</span></p>
 													</div>
 													<span class="mr-auto wd-45p fs-16 mt-2">
 														<div id="spark1" class="wd-100p"></div>
@@ -158,7 +158,7 @@
 												<div class="d-flex align-items-center">
 													<div class="mt-1">
 														<h5 class="mb-1 tx-15">Jimmy Changa</h5>
-														<p class="mb-0 tx-13 text-muted">User ID: #1234 <span class="text-danger ml-2">Pending</span></p>
+														<p class="mb-0 tx-13 text-muted">{{ trans('dashboard.user_id') }}: #1234 <span class="text-danger ml-2">{{ trans('dashboard.pending') }}</span></p>
 													</div>
 													<span class="mr-auto wd-45p fs-16 mt-2">
 														<div id="spark2" class="wd-100p"></div>
@@ -222,28 +222,28 @@
 					<div class="col-xl-4 col-md-12 col-lg-6">
 						<div class="card">
 							<div class="card-header pb-1">
-								<h3 class="card-title mb-2">Sales Activity</h3>
-								<p class="tx-12 mb-0 text-muted">Sales activities are the tactics that salespeople use to achieve their goals and objective</p>
+								<h3 class="card-title mb-2">{{ trans('dashboard.sales_activity') }}</h3>
+								<p class="tx-12 mb-0 text-muted">{{ trans('dashboard.sales_activity_description') }}</p>
 							</div>
 							<div class="product-timeline card-body pt-2 mt-1">
 								<ul class="timeline-1 mb-0">
-									<li class="mt-0"> <i class="ti-pie-chart bg-primary-gradient text-white product-icon"></i> <span class="font-weight-semibold mb-4 tx-14 ">Total Products</span> <a href="#" class="float-left tx-11 text-muted">3 days ago</a>
-										<p class="mb-0 text-muted tx-12">1.3k New Products</p>
+									<li class="mt-0"> <i class="ti-pie-chart bg-primary-gradient text-white product-icon"></i> <span class="font-weight-semibold mb-4 tx-14 ">{{ trans('dashboard.total_products') }}</span> <a href="#" class="float-left tx-11 text-muted">{{ trans('dashboard.days_ago', ['count' => 3]) }}</a>
+										<p class="mb-0 text-muted tx-12">1.3k {{ trans('dashboard.new_products') }}</p>
 									</li>
-									<li class="mt-0"> <i class="mdi mdi-cart-outline bg-danger-gradient text-white product-icon"></i> <span class="font-weight-semibold mb-4 tx-14 ">Total Sales</span> <a href="#" class="float-left tx-11 text-muted">35 mins ago</a>
-										<p class="mb-0 text-muted tx-12">1k New Sales</p>
+									<li class="mt-0"> <i class="mdi mdi-cart-outline bg-danger-gradient text-white product-icon"></i> <span class="font-weight-semibold mb-4 tx-14 ">{{ trans('dashboard.total_sales') }}</span> <a href="#" class="float-left tx-11 text-muted">{{ trans('dashboard.mins_ago', ['count' => 35]) }}</a>
+										<p class="mb-0 text-muted tx-12">1k {{ trans('dashboard.new_sales') }}</p>
 									</li>
-									<li class="mt-0"> <i class="ti-bar-chart-alt bg-success-gradient text-white product-icon"></i> <span class="font-weight-semibold mb-4 tx-14 ">Toatal Revenue</span> <a href="#" class="float-left tx-11 text-muted">50 mins ago</a>
-										<p class="mb-0 text-muted tx-12">23.5K New Revenue</p>
+									<li class="mt-0"> <i class="ti-bar-chart-alt bg-success-gradient text-white product-icon"></i> <span class="font-weight-semibold mb-4 tx-14 ">{{ trans('dashboard.total_revenue') }}</span> <a href="#" class="float-left tx-11 text-muted">{{ trans('dashboard.mins_ago', ['count' => 50]) }}</a>
+										<p class="mb-0 text-muted tx-12">23.5K {{ trans('dashboard.new_revenue') }}</p>
 									</li>
-									<li class="mt-0"> <i class="ti-wallet bg-warning-gradient text-white product-icon"></i> <span class="font-weight-semibold mb-4 tx-14 ">Toatal Profit</span> <a href="#" class="float-left tx-11 text-muted">1 hour ago</a>
-										<p class="mb-0 text-muted tx-12">3k New profit</p>
+									<li class="mt-0"> <i class="ti-wallet bg-warning-gradient text-white product-icon"></i> <span class="font-weight-semibold mb-4 tx-14 ">{{ trans('dashboard.total_profit') }}</span> <a href="#" class="float-left tx-11 text-muted">{{ trans('dashboard.hour_ago') }}</a>
+										<p class="mb-0 text-muted tx-12">3k {{ trans('dashboard.new_profit') }}</p>
 									</li>
-									<li class="mt-0"> <i class="si si-eye bg-purple-gradient text-white product-icon"></i> <span class="font-weight-semibold mb-4 tx-14 ">Customer Visits</span> <a href="#" class="float-left tx-11 text-muted">1 day ago</a>
-										<p class="mb-0 text-muted tx-12">15% increased</p>
+									<li class="mt-0"> <i class="si si-eye bg-purple-gradient text-white product-icon"></i> <span class="font-weight-semibold mb-4 tx-14 ">{{ trans('dashboard.customer_visits') }}</span> <a href="#" class="float-left tx-11 text-muted">{{ trans('dashboard.day_ago') }}</a>
+										<p class="mb-0 text-muted tx-12">15% {{ trans('dashboard.increased') }}</p>
 									</li>
-									<li class="mt-0 mb-0"> <i class="icon-note icons bg-primary-gradient text-white product-icon"></i> <span class="font-weight-semibold mb-4 tx-14 ">Customer Reviews</span> <a href="#" class="float-left tx-11 text-muted">1 day ago</a>
-										<p class="mb-0 text-muted tx-12">1.5k reviews</p>
+									<li class="mt-0 mb-0"> <i class="icon-note icons bg-primary-gradient text-white product-icon"></i> <span class="font-weight-semibold mb-4 tx-14 ">{{ trans('dashboard.customer_reviews') }}</span> <a href="#" class="float-left tx-11 text-muted">{{ trans('dashboard.day_ago') }}</a>
+										<p class="mb-0 text-muted tx-12">1.5k {{ trans('dashboard.reviews') }}</p>
 									</li>
 								</ul>
 							</div>
@@ -252,24 +252,24 @@
 					<div class="col-xl-4 col-md-12 col-lg-6">
 						<div class="card">
 							<div class="card-header pb-0">
-								<h3 class="card-title mb-2">Recent Orders</h3>
-								<p class="tx-12 mb-0 text-muted">An order is an investor's instructions to a broker or brokerage firm to purchase or sell</p>
+								<h3 class="card-title mb-2">{{ trans('dashboard.recent_orders') }}</h3>
+								<p class="tx-12 mb-0 text-muted">{{ trans('dashboard.order_description') }}</p>
 							</div>
 							<div class="card-body sales-info ot-0 pt-0 pb-0">
 								<div id="chart" class="ht-150"></div>
 								<div class="row sales-infomation pb-0 mb-0 mx-auto wd-100p">
 									<div class="col-md-6 col">
-										<p class="mb-0 d-flex"><span class="legend bg-primary brround"></span>Delivered</p>
+										<p class="mb-0 d-flex"><span class="legend bg-primary brround"></span>{{ trans('dashboard.delivered') }}</p>
 										<h3 class="mb-1">5238</h3>
 										<div class="d-flex">
-											<p class="text-muted ">Last 6 months</p>
+											<p class="text-muted ">{{ trans('dashboard.last_6_months') }}</p>
 										</div>
 									</div>
 									<div class="col-md-6 col">
-										<p class="mb-0 d-flex"><span class="legend bg-info brround"></span>Cancelled</p>
+										<p class="mb-0 d-flex"><span class="legend bg-info brround"></span>{{ trans('dashboard.cancelled') }}</p>
 											<h3 class="mb-1">3467</h3>
 										<div class="d-flex">
-											<p class="text-muted">Last 6 months</p>
+											<p class="text-muted">{{ trans('dashboard.last_6_months') }}</p>
 										</div>
 									</div>
 								</div>
@@ -280,7 +280,7 @@
 								<div class="row">
 									<div class="col-md-6">
 										<div class="d-flex align-items-center pb-2">
-											<p class="mb-0">Total Sales</p>
+											<p class="mb-0">{{ trans('dashboard.total_sales') }}</p>
 										</div>
 										<h4 class="font-weight-bold mb-2">$7,590</h4>
 										<div class="progress progress-style progress-sm">
@@ -289,7 +289,7 @@
 									</div>
 									<div class="col-md-6 mt-4 mt-md-0">
 										<div class="d-flex align-items-center pb-2">
-											<p class="mb-0">Active Users</p>
+											<p class="mb-0">{{ trans('dashboard.active_users') }}</p>
 										</div>
 										<h4 class="font-weight-bold mb-2">$5,460</h4>
 										<div class="progress progress-style progress-sm">
@@ -307,7 +307,7 @@
 				<div class="row row-sm row-deck">
 					<div class="col-md-12 col-lg-4 col-xl-4">
 						<div class="card card-dashboard-eight pb-2">
-							<h6 class="card-title">Your Top Countries</h6><span class="d-block mg-b-10 text-muted tx-12">Sales performance revenue based by country</span>
+							<h6 class="card-title">{{ trans('dashboard.top_countries') }}</h6><span class="d-block mg-b-10 text-muted tx-12">{{ trans('dashboard.sales_by_country') }}</span>
 							<div class="list-group">
 								<div class="list-group-item border-top-0">
 									<i class="flag-icon flag-icon-us flag-icon-squared"></i>
@@ -339,18 +339,18 @@
 					<div class="col-md-12 col-lg-8 col-xl-8">
 						<div class="card card-table-two">
 							<div class="d-flex justify-content-between">
-								<h4 class="card-title mb-1">Your Most Recent Earnings</h4>
+								<h4 class="card-title mb-1">{{ trans('dashboard.recent_earnings') }}</h4>
 								<i class="mdi mdi-dots-horizontal text-gray"></i>
 							</div>
-							<span class="tx-12 tx-muted mb-3 ">This is your most recent earnings for today's date.</span>
+							<span class="tx-12 tx-muted mb-3 ">{{ trans('dashboard.recent_earnings_description') }}</span>
 							<div class="table-responsive country-table">
 								<table class="table table-striped table-bordered mb-0 text-sm-nowrap text-lg-nowrap text-xl-nowrap">
 									<thead>
 										<tr>
-											<th class="wd-lg-25p">Date</th>
-											<th class="wd-lg-25p tx-right">Sales Count</th>
-											<th class="wd-lg-25p tx-right">Earnings</th>
-											<th class="wd-lg-25p tx-right">Tax Witheld</th>
+											<th class="wd-lg-25p">{{ trans('dashboard.date') }}</th>
+											<th class="wd-lg-25p tx-right">{{ trans('dashboard.sales_count') }}</th>
+											<th class="wd-lg-25p tx-right">{{ trans('dashboard.earnings') }}</th>
+											<th class="wd-lg-25p tx-right">{{ trans('dashboard.tax_withheld') }}</th>
 										</tr>
 									</thead>
 									<tbody>

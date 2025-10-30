@@ -14,7 +14,7 @@
                 {{ method_field('delete') }}
                 {{ csrf_field() }}
                 <div class="modal-body">
-                    <h5>{{trans('sections_trans.Warning')}}</h5>
+                    <h5>{{trans('polyclinics_trans.Warning')}}</h5>
                     <input type="hidden" id="delete_select_id" name="delete_select_id" value=''>
                 </div>
                 <div class="modal-footer">

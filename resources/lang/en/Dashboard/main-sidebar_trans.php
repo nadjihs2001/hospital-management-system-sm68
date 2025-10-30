@@ -4,7 +4,8 @@ return [
 
      'Main'=>'Hospital management software',
      'index'=>'Home',
-     'sections'=>'Sections',
+     'polyclinics'=>'Polyclinics',
+     'view_all'=>'View All',
 
 
 ];

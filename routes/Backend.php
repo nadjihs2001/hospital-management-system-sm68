@@ -11,10 +11,10 @@ use App\Http\Controllers\Dashboard\PatientController;
 use App\Http\Controllers\Dashboard\PaymentAccountController;
 use App\Http\Controllers\Dashboard\RayEmployeeController;
 use App\Http\Controllers\Dashboard\ReceiptAccountController;
-use App\Http\Controllers\Dashboard\SectionController;
+use App\Http\Controllers\Dashboard\PolyclinicController;
 use App\Http\Controllers\Dashboard\SingleServiceController;
 use Illuminate\Support\Facades\Route; 
-use \Mcamara\LaravelLocalization\ 
+use \Mcamara\LaravelLocalization\Facades\LaravelLocalization; 
 /*
 |--------------------------------------------------------------------------
 | Backend Routes
@@ -27,15 +27,13 @@ use \Mcamara\LaravelLocalization\
 */
 
 
-
-Route::get('/Dashboard_Admin', [DashboardController::class, 'index']);
-
-
 Route::group(
     [
         'prefix' => LaravelLocalization::setLocale(),
         'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
     ], function(){
+
+    Route::get('/Dashboard_Admin', [DashboardController::class, 'index']);
 
 
    //################################ dashboard user ##########################################
@@ -60,11 +58,11 @@ Route::group(
 
     Route::middleware(['auth:admin'])->group(function () {
 
-    //############################# sections route ##########################################
+    //############################# polyclinics route ##########################################
 
-        Route::resource('Sections', SectionController::class);
+        Route::resource('Polyclinics', PolyclinicController::class);
 
-    //############################# end sections route ######################################
+    //############################# end polyclinics route ######################################
 
 
      //############################# Doctors route ##########################################

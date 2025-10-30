@@ -5,7 +5,7 @@ use App\Interfaces\Doctors\DoctorRepositoryInterface;
 use App\Models\Appointment;
 use App\Models\Doctor;
 use App\Models\Image;
-use App\Models\Section;
+use App\Models\Polyclinic;
 use App\Traits\UploadTrait;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
@@ -23,9 +23,9 @@ class DoctorRepository implements DoctorRepositoryInterface
 
     public function create()
     {
-        $sections = Section::all();
+        $polyclinics = Polyclinic::all();
         $appointments = Appointment::all();
-        return view('Dashboard.Doctors.add',compact('sections','appointments'));
+        return view('Dashboard.Doctors.add',compact('polyclinics','appointments'));
     }
 
 
@@ -145,10 +145,10 @@ class DoctorRepository implements DoctorRepositoryInterface
 
     public function edit($id)
     {
-        $sections = Section::all();
+        $polyclinics = Polyclinic::all();
         $appointments = Appointment::all();
         $doctor = Doctor::findorfail($id);
-        return view('Dashboard.Doctors.edit',compact('sections','appointments','doctor'));
+        return view('Dashboard.Doctors.edit',compact('polyclinics','appointments','doctor'));
     }
 
     public function update_password($request)
