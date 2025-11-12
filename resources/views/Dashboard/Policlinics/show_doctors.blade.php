@@ -5,7 +5,7 @@
 @endsection
 
 @section('title')
-    {{$section->name}} / {{trans('sections_trans.section_doctors')}}
+    {{$policlinic->name}} / {{trans('Dashboard/policlinics_trans.policlinic_doctors')}}
 @stop
 
 @section('page-header')
@@ -13,7 +13,7 @@
     <div class="breadcrumb-header justify-content-between">
         <div class="my-auto">
             <div class="d-flex">
-                <h4 class="content-title mb-0 my-auto">{{$section->name}}</h4><span class="text-muted mt-1 tx-13 mr-2 mb-0">/ {{trans('sections_trans.section_doctors')}}</span>
+                <h4 class="content-title mb-0 my-auto">{{$policlinic->name}}</h4><span class="text-muted mt-1 tx-13 mr-2 mb-0">/ {{trans('Dashboard/policlinics_trans.policlinic_doctors')}}</span>
             </div>
         </div>
     </div>
@@ -46,7 +46,7 @@
                                 <th scope="row">{{ $loop->iteration }}</th>
                                 <td>{{$doctor->name}}</td>
                                 <td>{{ $doctor->email }}</td>
-                                <td>{{ $doctor->section->name}}</td>
+                                <td>{{ $doctor->policlinic->name}}</td>
                                 <td>{{ $doctor->phone}}</td>
                                 <td>
                                     @foreach($doctor->doctorappointments as $appointment)
