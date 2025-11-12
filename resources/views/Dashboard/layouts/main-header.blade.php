@@ -181,89 +181,46 @@
                             <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
                         </svg>
                         <span class=" pulse"></span></a>
-                    <div class="dropdown-menu">
+                    <div class="dropdown-menu dropdown-notifications">
                         <div class="menu-header-content bg-primary text-right">
                             <div class="d-flex">
-                                <h6 class="dropdown-title mb-1 tx-15 text-white font-weight-semibold">Notifications</h6>
+                                <h6 class="dropdown-title mb-1 tx-15 text-white font-weight-semibold">الاشعارات</h6>
                                 <span
                                     class="badge badge-pill badge-warning mr-auto my-auto float-left">Mark All Read</span>
                             </div>
-                            <p class="dropdown-title-text subtext mb-0 text-white op-6 pb-0 tx-12 ">You have 4 unread
-                                Notifications</p>
+                            <p data-count="{{App\Models\Notification::CountNotification(auth()->user()->id)->count()}}" class="dropdown-title-text subtext mb-0 text-white op-6 pb-0 tx-12 notif-count">{{App\Models\Notification::CountNotification(auth()->user()->id)->count()}}</p>
                         </div>
                         <div class="main-notification-list Notification-scroll">
+
+                            <div class="new_message">
                             <a class="d-flex p-3 border-bottom" href="#">
                                 <div class="notifyimg bg-pink">
                                     <i class="la la-file-alt text-white"></i>
                                 </div>
                                 <div class="mr-3">
-                                    <h5 class="notification-label mb-1">New files available</h5>
-                                    <div class="notification-subtext">10 hour ago</div>
+                                    <h4 class="notification-label mb-1"></h4>
+                                    <div class="notification-subtext"></div>
                                 </div>
                                 <div class="mr-auto">
                                     <i class="las la-angle-left text-left text-muted"></i>
                                 </div>
                             </a>
-                            <a class="d-flex p-3" href="#">
-                                <div class="notifyimg bg-purple">
-                                    <i class="la la-gem text-white"></i>
-                                </div>
-                                <div class="mr-3">
-                                    <h5 class="notification-label mb-1">Updates Available</h5>
-                                    <div class="notification-subtext">2 days ago</div>
-                                </div>
-                                <div class="mr-auto">
-                                    <i class="las la-angle-left text-left text-muted"></i>
-                                </div>
-                            </a>
+                            </div>
+
+                            @foreach(App\Models\Notification::where('user_id',auth()->user()->id)->where('reader_status',0)->get() as $notification )
                             <a class="d-flex p-3 border-bottom" href="#">
-                                <div class="notifyimg bg-success">
-                                    <i class="la la-shopping-basket text-white"></i>
+                                <div class="notifyimg bg-pink">
+                                    <i class="la la-file-alt text-white"></i>
                                 </div>
                                 <div class="mr-3">
-                                    <h5 class="notification-label mb-1">New Order Received</h5>
-                                    <div class="notification-subtext">1 hour ago</div>
+                                    <h5 class="notification-label mb-1">{{$notification->message}}</h5>
+                                    <div class="notification-subtext">{{$notification->created_at}}</div>
                                 </div>
                                 <div class="mr-auto">
                                     <i class="las la-angle-left text-left text-muted"></i>
                                 </div>
                             </a>
-                            <a class="d-flex p-3 border-bottom" href="#">
-                                <div class="notifyimg bg-warning">
-                                    <i class="la la-envelope-open text-white"></i>
-                                </div>
-                                <div class="mr-3">
-                                    <h5 class="notification-label mb-1">New review received</h5>
-                                    <div class="notification-subtext">1 day ago</div>
-                                </div>
-                                <div class="mr-auto">
-                                    <i class="las la-angle-left text-left text-muted"></i>
-                                </div>
-                            </a>
-                            <a class="d-flex p-3 border-bottom" href="#">
-                                <div class="notifyimg bg-danger">
-                                    <i class="la la-user-check text-white"></i>
-                                </div>
-                                <div class="mr-3">
-                                    <h5 class="notification-label mb-1">22 verified registrations</h5>
-                                    <div class="notification-subtext">2 hour ago</div>
-                                </div>
-                                <div class="mr-auto">
-                                    <i class="las la-angle-left text-left text-muted"></i>
-                                </div>
-                            </a>
-                            <a class="d-flex p-3 border-bottom" href="#">
-                                <div class="notifyimg bg-primary">
-                                    <i class="la la-check-circle text-white"></i>
-                                </div>
-                                <div class="mr-3">
-                                    <h5 class="notification-label mb-1">Project has been approved</h5>
-                                    <div class="notification-subtext">4 hour ago</div>
-                                </div>
-                                <div class="mr-auto">
-                                    <i class="las la-angle-left text-left text-muted"></i>
-                                </div>
-                            </a>
+                            @endforeach
                         </div>
                         <div class="dropdown-footer">
                             <a href="">VIEW ALL</a>
@@ -289,26 +246,32 @@
                                 <div class="main-img-user"><img alt="" src="{{URL::asset('Dashboard/img/faces/6.jpg')}}"
                                                                 class=""></div>
                                 <div class="mr-3 my-auto">
-                                    <h6>Petey Cruiser</h6><span>Premium Member</span>
+                                    <h6>{{auth()->user()->name}}</h6><span>{{auth()->user()->email}}</span>
                                 </div>
                             </div>
                         </div>
-                        <a class="dropdown-item" href=""><i class="bx bx-user-circle"></i>Profile</a>
-                        <a class="dropdown-item" href=""><i class="bx bx-cog"></i> Edit Profile</a>
-                        <a class="dropdown-item" href=""><i class="bx bxs-inbox"></i>Inbox</a>
-                        <a class="dropdown-item" href=""><i class="bx bx-envelope"></i>Messages</a>
-                        <a class="dropdown-item" href=""><i class="bx bx-slider-alt"></i> Account Settings</a>
-
+                        <a class="dropdown-item" href=""><i class="bx bx-user-circle"></i>الملف الشخصي</a>
+                        <a class="dropdown-item" href=""><i class="bx bx-cog"></i>تعديل الملف الشخصي</a>
                         @if(auth('web')->check())
                             <form method="POST" action="{{ route('logout.user') }}">
-                                @else
-                            <form method="POST" action="{{ route('logout.admin') }}">
-                            @endif
-                            @csrf
-                                        <a class="dropdown-item" href="#"
-                                           onclick="event.preventDefault();
+                                @elseif(auth('admin')->check())
+                                    <form method="POST" action="{{ route('logout.admin') }}">
+                                        @elseif(auth('doctor')->check())
+                                            <form method="POST" action="{{ route('logout.doctor') }}">
+                                                @elseif(auth('ray_employee')->check())
+                                                    <form method="POST" action="{{ route('logout.ray_employee') }}">
+                                                        @elseif(auth('laboratorie_employee')->check())
+                                                            <form method="POST"
+                                                                  action="{{ route('logout.laboratorie_employee') }}">
+                                                                @else
+                                                                    <form method="POST"
+                                                                          action="{{ route('logout.patient') }}">
+                                                                        @endif
+                                                                        @csrf
+                                                                        <a class="dropdown-item" href="#"
+                                                                           onclick="event.preventDefault();
                                         this.closest('form').submit();"><i class="bx bx-log-out"></i>تسجيل الخروج</a>
-                                    </form>
+                                                                    </form>
 
                     </div>
                 </div>
@@ -327,4 +290,37 @@
         </div>
     </div>
 </div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+<script src="https://js.pusher.com/7.0/pusher.min.js"></script>
+
+<script src="{{asset('js/app.js')}}"></script>
+
+<script>
+    var notificationsWrapper   = $('.dropdown-notifications');
+    var notificationsCountElem = notificationsWrapper.find('p[data-count]');
+    var notificationsCount  = parseInt(notificationsCountElem.data('count'));
+
+    var notifications = notificationsWrapper.find('h4.notification-label');
+    var new_message = notificationsWrapper.find('.new_message');
+    new_message.hide();
+
+    Echo.private('create-invoice.{{ auth()->user()->id }}').listen('.create-invoice', (data) => {
+        var newNotificationHtml = `
+       <h4 class="notification-label mb-1">`+data.message+data.patient+`</h4>
+       <div class="notification-subtext">`+data.created_at+`</div>`;
+        new_message.show();
+        notifications.html(newNotificationHtml);
+        notificationsCount += 1;
+        notificationsCountElem.attr('data-count', notificationsCount);
+        notificationsWrapper.find('.notif-count').text(notificationsCount);
+        notificationsWrapper.show();
+    });
+
+
+</script>
+
+
+
+
 <!-- /main-header -->

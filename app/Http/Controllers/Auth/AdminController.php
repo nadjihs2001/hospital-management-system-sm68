@@ -11,43 +11,15 @@ use Illuminate\Support\Facades\Auth;
 class AdminController extends Controller
 {
 
-    public function index()
-    {
-        //
-    }
-
-
-    public function create()
-    {
-        //
-    }
-
-
     public function store(AdminLoginRequest $request)
     {
-        $request->authenticate();
+        if($request->authenticate()){
+            $request->session()->regenerate();
+            return redirect()->intended(RouteServiceProvider::ADMIN);
+        }
 
-        $request->session()->regenerate();
+        return redirect()->back()->withErrors(['name' => (trans('Dashboard/auth.failed'))]);
 
-        return redirect()->intended(RouteServiceProvider::ADMIN);
-    }
-
-
-    public function show($id)
-    {
-        //
-    }
-
-
-    public function edit($id)
-    {
-        //
-    }
-
-
-    public function update(Request $request, $id)
-    {
-        //
     }
 
 
