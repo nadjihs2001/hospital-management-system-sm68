@@ -1,6 +1,6 @@
 @extends('Dashboard.layouts.master')
 @section('title')
-    {{trans('Dashboard/main-sidebar_trans.sections')}}
+    {{trans('Dashboard/main-sidebar_trans.policlinics')}}
 @stop
 @section('css')
     <!-- Internal Data table css -->
@@ -13,7 +13,7 @@
 				<div class="breadcrumb-header justify-content-between">
 					<div class="my-auto">
 						<div class="d-flex">
-							<h4 class="content-title mb-0 my-auto">{{trans('Dashboard/main-sidebar_trans.sections')}}</h4><span class="text-muted mt-1 tx-13 mr-2 mb-0">/ {{trans('Dashboard/main-sidebar_trans.view_all')}}</span>
+							<h4 class="content-title mb-0 my-auto">{{trans('Dashboard/main-sidebar_trans.policlinics')}}</h4><span class="text-muted mt-1 tx-13 mr-2 mb-0">/ {{trans('Dashboard/main-sidebar_trans.view_all')}}</span>
 						</div>
 					</div>
 				</div>
@@ -29,7 +29,7 @@
                                 <div class="card-header pb-0">
                                     <div class="d-flex justify-content-between">
                                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#add">
-                                            {{trans('Dashboard/sections_trans.add_sections')}}
+                                            {{trans('Dashboard/policlinics_trans.add_policlinic')}}
                                         </button>
                                     </div>
                                 </div>
@@ -39,27 +39,27 @@
                                             <thead>
                                             <tr>
                                                 <th class="wd-15p border-bottom-0">#</th>
-                                                <th class="wd-15p border-bottom-0">{{trans('sections_trans.name_sections')}}</th>
-                                                <th class="wd-15p border-bottom-0">{{trans('sections_trans.description')}}</th>
-                                                <th class="wd-20p border-bottom-0">{{trans('sections_trans.created_at')}}</th>
-                                                <th class="wd-20p border-bottom-0">{{trans('sections_trans.Processes')}}</th>
+                                                <th class="wd-15p border-bottom-0">{{trans('Dashboard/policlinics_trans.policlinic_name')}}</th>
+                                                <th class="wd-15p border-bottom-0">{{trans('Dashboard/policlinics_trans.description')}}</th>
+                                                <th class="wd-20p border-bottom-0">{{trans('Dashboard/policlinics_trans.created_at')}}</th>
+                                                <th class="wd-20p border-bottom-0">{{trans('Dashboard/policlinics_trans.processes')}}</th>
                                             </tr>
                                             </thead>
                                             <tbody>
-                                           @foreach($sections as $section)
+                                           @foreach($policlinics as $policlinic)
                                                <tr>
                                                    <td>{{$loop->iteration}}</td>
-                                                   <td><a href="{{route('Sections.show',$section->id)}}">{{$section->name}}</a> </td>
-                                                   <td>{{ \Str::limit($section->description, 50) }}</td>
-                                                   <td>{{ $section->created_at->diffForHumans() }}</td>
+                                                   <td><a href="{{route('Policlinics.show',$policlinic->id)}}">{{$policlinic->name}}</a> </td>
+                                                   <td>{{ \Str::limit($policlinic->description, 50) }}</td>
+                                                   <td>{{ $policlinic->created_at->diffForHumans() }}</td>
                                                    <td>
-                                                       <a class="modal-effect btn btn-sm btn-info" data-effect="effect-scale"  data-toggle="modal" href="#edit{{$section->id}}"><i class="las la-pen"></i></a>
-                                                       <a class="modal-effect btn btn-sm btn-danger" data-effect="effect-scale"  data-toggle="modal" href="#delete{{$section->id}}"><i class="las la-trash"></i></a>
+                                                       <a class="modal-effect btn btn-sm btn-info" data-effect="effect-scale"  data-toggle="modal" href="#edit{{$policlinic->id}}"><i class="las la-pen"></i></a>
+                                                       <a class="modal-effect btn btn-sm btn-danger" data-effect="effect-scale"  data-toggle="modal" href="#delete{{$policlinic->id}}"><i class="las la-trash"></i></a>
                                                    </td>
                                                </tr>
 
-                                               @include('Dashboard.Sections.edit')
-                                               @include('Dashboard.Sections.delete')
+                                               @include('Dashboard.Policlinics.edit')
+                                               @include('Dashboard.Policlinics.delete')
 
                                            @endforeach
                                             </tbody>
@@ -70,7 +70,7 @@
                         </div>
                         <!--/div-->
 
-                    @include('Dashboard.Sections.add')
+                    @include('Dashboard.Policlinics.add')
                     <!-- /row -->
 
 				</div>

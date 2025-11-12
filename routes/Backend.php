@@ -9,9 +9,9 @@ use App\Http\Controllers\Dashboard\InsuranceController;
 use App\Http\Controllers\Dashboard\LaboratorieEmployeeController;
 use App\Http\Controllers\Dashboard\PatientController;
 use App\Http\Controllers\Dashboard\PaymentAccountController;
+use App\Http\Controllers\Dashboard\PoliclinicController;
 use App\Http\Controllers\Dashboard\RayEmployeeController;
 use App\Http\Controllers\Dashboard\ReceiptAccountController;
-use App\Http\Controllers\Dashboard\SectionController;
 use App\Http\Controllers\Dashboard\SingleServiceController;
 use Illuminate\Support\Facades\Route;
 
@@ -60,11 +60,11 @@ Route::group(
 
     Route::middleware(['auth:admin'])->group(function () {
 
-    //############################# sections route ##########################################
+    //############################# policlinics route ##########################################
 
-        Route::resource('Sections', SectionController::class);
+        Route::resource('Policlinics', PoliclinicController::class);
 
-    //############################# end sections route ######################################
+    //############################# end policlinics route ######################################
 
 
      //############################# Doctors route ##########################################

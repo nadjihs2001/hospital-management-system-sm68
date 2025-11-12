@@ -1,6 +1,7 @@
 <?php
 
 
+use App\Http\Controllers\WebSite\WebsiteController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -22,16 +23,10 @@ Route::group(
         'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath']
     ], function () {
 
-    Route::get('/', function () {
-        return view('welcome');
-    });
+    Route::get('/', [WebsiteController::class, 'index'])->name('website.index');
+    Route::get('/about', [WebsiteController::class, 'about'])->name('website.about');
+    Route::get('/services', [WebsiteController::class, 'services'])->name('website.services');
+    Route::get('/structures', [WebsiteController::class, 'structures'])->name('website.structures');
+    Route::get('/news', [WebsiteController::class, 'news'])->name('website.news');
 
 });
-
-
-
-
-
-
-
-

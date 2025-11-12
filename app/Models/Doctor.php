@@ -12,7 +12,7 @@ class Doctor extends Authenticatable
     use Translatable;
     use HasFactory;
     public $translatedAttributes = ['name','appointments'];
-    public $fillable= ['email','email_verified_at','password','phone','name','section_id','status','number_of_statements'];
+    public $fillable= ['email','email_verified_at','password','phone','name','policlinic_id','status','number_of_statements'];
     //protected $guarded=[];
 
     /**
@@ -23,10 +23,10 @@ class Doctor extends Authenticatable
         return $this->morphOne(Image::class, 'imageable');
     }
 
-    // One To One get section of Doctor
-    public function section()
+    // One To One get policlinic of Doctor
+    public function policlinic()
     {
-        return $this->belongsTo(Section::class);
+        return $this->belongsTo(Policlinic::class);
     }
 
     public function doctorappointments()
