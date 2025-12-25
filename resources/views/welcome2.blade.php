@@ -100,13 +100,21 @@
         <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
             <template x-for="(slide, index) in slides" :key="index">
                 <button
-                    @click="active = index"
+                    @click="goTo(index)"
                     class="w-3 h-3 rounded-full transition-colors duration-300"
                     :class="active === index ? 'bg-white' : 'bg-white/50 hover:bg-white/75'"
                     aria-label="Go to slide " x-text="index + 1"
                 ></button>
             </template>
         </div>
+
+        <!-- Navigation Arrows -->
+        <button @click="prev()" class="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 w-12 h-12 bg-black/30 hover:bg-black/50 text-white rounded-full transition-colors">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button @click="next()" class="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 w-12 h-12 bg-black/30 hover:bg-black/50 text-white rounded-full transition-colors">
+            <i class="fas fa-chevron-right"></i>
+        </button>
     </section>
 
     <!-- ABOUT US SECTION -->
@@ -558,6 +566,15 @@
                     setInterval(() => {
                         this.active = this.active === this.slides.length - 1 ? 0 : this.active + 1;
                     }, 5000);
+                },
+                next() {
+                    this.active = this.active === this.slides.length - 1 ? 0 : this.active + 1;
+                },
+                prev() {
+                    this.active = this.active === 0 ? this.slides.length - 1 : this.active - 1;
+                },
+                goTo(index) {
+                    this.active = index;
                 }
             }
         }
