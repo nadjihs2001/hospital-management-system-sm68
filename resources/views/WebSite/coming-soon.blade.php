@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>{{ trans('website.coming_soon') }} - MediTech</title>
     <!-- Stylesheets -->
-    <link href="{{URL::asset('WebSite/css/bootstrap.css')}}" rel="stylesheet">
+
     <link href="{{URL::asset('WebSite/css/style.css')}}" rel="stylesheet">
     <link href="{{URL::asset('WebSite/css/responsive.css')}}" rel="stylesheet">
 
@@ -65,4 +65,3 @@
     <script src="{{URL::asset('WebSite/js/script.js')}}"></script>
 </body>
 </html>
-
